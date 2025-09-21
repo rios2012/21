@@ -25,10 +25,10 @@
       transform: translate(-50%, -50%);
       background: rgba(255, 255, 0, 0.9);
       color: black;
-        font-size: 2.5vw; /* en lugar de 22px */
-       padding: 2vw 4vw; /* adaptativo */
+        font-size: clamp(18px, 4vw, 36px);
+       padding: clamp(12px, 3vw, 24px) clamp(24px, 6vw, 48px);
       font-family: Arial, sans-serif;
-      border-radius: 15px;
+      border-radius: clamp(8px, 1.5vw, 20px);
       cursor: pointer;
       box-shadow: 0 0 15px yellow;
       text-align: center;
@@ -41,7 +41,7 @@
       top: 20px;
       width: 100%;
       text-align: center;
-      font-size: 2.5vw; /* en lugar de 28px */
+      font-size: clamp(20px, 5vw, 40px);
       font-weight: bold;
       color: gold;
       font-family: "Verdana", sans-serif;
@@ -54,7 +54,7 @@
       top: 65%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 2.5vw; /* en lugar de 26px */
+      font-size: clamp(20px, 4.5vw, 36px);
       font-weight: bold;
       color: white;
       font-family: "Comic Sans MS", cursive, sans-serif;
@@ -269,4 +269,5 @@ animate();
 </script>
 </body>
 </html>
+
 
