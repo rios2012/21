@@ -25,19 +25,15 @@
       transform: translate(-50%, -50%);
       background: rgba(255, 255, 0, 0.9);
       color: black;
-      font-size: 22px;
+        font-size: 2.5vw; /* en lugar de 22px */
+       padding: 2vw 4vw; /* adaptativo */
       font-family: Arial, sans-serif;
-      padding: 20px 40px;
       border-radius: 15px;
       cursor: pointer;
       box-shadow: 0 0 15px yellow;
       text-align: center;
       z-index: 10;
       transition: opacity 1s ease;
-        font-size: 5vw;      /* Tamaño de fuente relativo al ancho de pantalla */
-  padding: 3vw 7vw;    /* Padding también relativo */
-  max-width: 90vw;     /* Evita que se salga en pantallas pequeñas */
-  box-sizing: border-box;
     }
     /* Texto superior */
     #mensaje {
@@ -45,16 +41,12 @@
       top: 20px;
       width: 100%;
       text-align: center;
-      font-size: 28px;
+      font-size: 2.5vw; /* en lugar de 28px */
       font-weight: bold;
       color: gold;
       font-family: "Verdana", sans-serif;
       text-shadow: 0 0 15px yellow, 0 0 25px orange;
       display: none;
-       font-size: 6vw;      /* Tamaño de fuente relativo */
-  padding: 1vw 2vw;
-  max-width: 95vw;
-  box-sizing: border-box;
     }
     /* Mensaje final */
     #finalMsg {
@@ -62,7 +54,7 @@
       top: 65%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 26px;
+      font-size: 2.5vw; /* en lugar de 26px */
       font-weight: bold;
       color: white;
       font-family: "Comic Sans MS", cursive, sans-serif;
@@ -70,11 +62,6 @@
       display: none;
       animation: aparecer 2s ease forwards;
       white-space: nowrap;   /* 🚀 evita el salto de línea */
-        font-size: 5vw;
-  max-width: 95vw;
-  white-space: normal; /* Permite salto de línea si es necesario */
-  padding: 2vw 4vw;
-  box-sizing: border-box;
     }
     @keyframes aparecer {
       from {opacity: 0; transform: translate(-50%, -40%);}
@@ -97,6 +84,16 @@ const canvas = document.getElementById("c");
 const ctx = canvas.getContext("2d");
 let W = innerWidth, H = innerHeight;
 canvas.width = W; canvas.height = H;
+
+// Ajustar canvas y posiciones al cambiar tamaño de pantalla
+  window.addEventListener("resize", () => {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
+    baseX = W / 2;
+    baseY = H - 10;
+  });
 
 let stars = [];
 for(let i=0;i<150;i++){
@@ -272,3 +269,4 @@ animate();
 </script>
 </body>
 </html>
+
